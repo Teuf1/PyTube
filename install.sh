@@ -6,7 +6,7 @@ blue='\033[1;36m'
 yellow='\033[1;33m'
 #-----main-----#
 clear
-echo "
+echo -e "${blue}
 ███╗   ███╗ █████╗ ███╗   ██╗██╗███████╗███████╗ ██████╗
 ████╗ ████║██╔══██╗████╗  ██║██║██╔════╝██╔════╝██╔═══██╗
 ██╔████╔██║███████║██╔██╗ ██║██║███████╗███████╗██║   ██║
@@ -41,7 +41,7 @@ git clone https://github.com/Manisso/PyTube.git $INSTALL_DIR;
 echo -e "#!/bin/bash\n python2 $INSTALL_DIR/pytube.py"  > pytube;
 chmod +x pytube;
 mv pytube $PREFIX/bin/;
-cd
+cd /data/data/com.termux/files/home/
 rm -rf PyTube;
 
 if [ -d "$INSTALL_DIR" ];
