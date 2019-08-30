@@ -32,7 +32,7 @@ then
     fi
 fi
 
-echo "${yellow}[✔] Installing ...";
+echo -e "${yellow}[✔] Installing ...";
 echo "";
 apt install python2
 python2 -m pip install --upgrade youtube_dl;
@@ -46,13 +46,13 @@ rm -rf PyTube;
 if [ -d "$INSTALL_DIR" ];
 then
     echo "";
-    echo "${green}[✔]Tool istalled with success![✔]";
+    echo -e "${green}[✔]Tool istalled with success![✔]";
     echo "";
-    echo "${green}[✔]=====================================================[✔]";
-    echo "${green}[✔] All is done!! You can execute tool by typing pytube [✔]";
-    echo "${green}[✔]=====================================================[✔]";
+    echo -e "${green}[✔]=====================================================[✔]";
+    echo -e "${green}[✔] All is done!! You can execute tool by typing pytube [✔]";
+    echo -e "${green}[✔]=====================================================[✔]";
     echo "";
 else
-    echo "${red}[✘] Installation failed! [✘]";
+    echo -e "${red}[✘] Installation failed! [✘]";
     exit
 fi
