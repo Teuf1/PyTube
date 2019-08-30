@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#
+
 from __future__ import unicode_literals
 import youtube_dl
 import os
@@ -29,8 +29,8 @@ menu = '''\033[0m
 
     {99}-Exit
  '''
-print logo
-print menu
+print (logo)
+print (menu)
 
 
 def quit():
@@ -39,8 +39,8 @@ def quit():
         exit()
     else:
         os.system("clear")
-        print logo
-        print menu
+        print (logo)
+        print (menu)
         select()
 
 
@@ -49,7 +49,7 @@ def select():
         choice = input("SnapTub~# ")
         if choice == 1:
             os.system("clear")
-            print """
+            print ("""
  __     __  __        __
 /  |   /  |/  |      /  |
 $$ |   $$ |$$/   ____$$ |  ______    ______
@@ -61,7 +61,7 @@ $$  \ /$$/ $$ |/$$$$$$$ |/$$$$$$  |/$$$$$$  |
     $/     $$/  $$$$$$$/  $$$$$$$/  $$$$$$/
 
 PUT URL EX: https://www.youtube.com/watch?v=PYJHFVBsmeQ
-"""
+""")
             ydl_opts = {}
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([raw_input('URL: ')])
@@ -69,7 +69,7 @@ PUT URL EX: https://www.youtube.com/watch?v=PYJHFVBsmeQ
             quit()
         elif choice == 2:
             os.system("clear")
-            print """
+            print ("""
   /$$$$$$                  /$$ /$$
  /$$__  $$                | $$|__/
 | $$  \ $$ /$$   /$$  /$$$$$$$ /$$  /$$$$$$
@@ -80,7 +80,7 @@ PUT URL EX: https://www.youtube.com/watch?v=PYJHFVBsmeQ
 |__/  |__/ \______/  \_______/|__/ \______/
 
 PUT URL EX: https://www.youtube.com/watch?v=PYJHFVBsmeQ
-"""
+""")
             ydl_opts = {
                 'format': 'bestaudio/best',
                 'postprocessors': [{
@@ -115,7 +115,7 @@ EX: https://www.youtube.com/watch?v=lp-EO5I60KA&list=PLMC9KNkIncKtPzgY-5rmhvj7fa
             print("")
             quit()
     except(KeyboardInterrupt):
-        print ""
+        print ("")
 
 
 select()
