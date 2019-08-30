@@ -35,10 +35,10 @@ fi
 
 echo -e "${yellow}[✔] Installing ...";
 echo "";
-apt install python2
-python2 -m pip install --upgrade youtube_dl;
+apt install python
+python3 -m pip install --upgrade youtube_dl;
 git clone https://github.com/Manisso/PyTube.git $INSTALL_DIR;
-echo -e "#!/bin/bash\n python2 $INSTALL_DIR/pytube.py"  > pytube;
+echo -e "#!/bin/bash\n python3 $INSTALL_DIR/pytube.py"  > pytube;
 chmod +x pytube;
 mv pytube $PREFIX/bin/;
 cd /data/data/com.termux/files/home/
