@@ -37,7 +37,7 @@ echo -e "${yellow}[✔] Installing ...";
 echo "";
 apt install python
 python3 -m pip install --upgrade youtube_dl;
-git clone https://github.com/Manisso/PyTube.git $INSTALL_DIR;
+git clone https://github.com/tonmoy-islam/PyTube $INSTALL_DIR;
 echo -e "#!/bin/bash\n python3 $INSTALL_DIR/pytube.py"  > pytube;
 chmod +x pytube;
 mv pytube $PREFIX/bin/;
