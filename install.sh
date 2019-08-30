@@ -34,7 +34,7 @@ python2 -m pip install --upgrade youtube_dl
 git clone https://github.com/Manisso/PyTube.git $INSTALL_DIR;
 echo -e "#!/bin/bash \n python2 $INSTALL_DIR/pytube.py"  > pytube;
 chmod +x pytube;
-cp pytube $PREFIX/bin/;
+mv pytube $PREFIX/bin/;
 
 
 if [ -d "$INSTALL_DIR" ];
