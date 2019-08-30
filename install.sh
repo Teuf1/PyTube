@@ -19,10 +19,10 @@ echo "
 ";
 
 INSTALL_DIR="/data/data/com.termux/files/usr/share/doc/PyTube"
-echo "${yellow}[✔] Checking directories...";
+echo -e "${yellow}[✔] Checking directories...";
 if [ -d "$INSTALL_DIR" ];
 then
-    echo "${blue}[◉] A directory PyTube was found! Do you want to replace it? [Y/n]:" ;
+    echo -e "${blue}[◉] A directory PyTube was found! Do you want to replace it? [Y/n]:" ;
     read usr
     if [ $usr == "Y" ];
     then
