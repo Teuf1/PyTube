@@ -1,5 +1,10 @@
 #!/bin/bash
-clear
+#-----colors-----#
+red='\033[1;31m'
+green='\033[1;32m'
+blue='\033[1;36m'
+yellow='\033[1;33m'
+#-----main-----#
 echo "
 ███╗   ███╗ █████╗ ███╗   ██╗██╗███████╗███████╗ ██████╗
 ████╗ ████║██╔══██╗████╗  ██║██║██╔════╝██╔════╝██╔═══██╗
@@ -8,16 +13,16 @@ echo "
 ██║ ╚═╝ ██║██║  ██║██║ ╚████║██║███████║███████║╚██████╔╝
 ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝ ╚═════╝
 ▀▀█▀▀ █▀▀█ █▀▀█ █   █▀▀ ~ Tools Instaler By Ⓜ Ⓐ Ⓝ Ⓘ Ⓢ Ⓢ Ⓞ  ☪ ~
-  █   █  █ █  █ █   ▀▀█
-  ▀   ▀▀▀▀ ▀▀▀▀ ▀▀▀ ▀▀▀
+  █ . █  █ █  █  █   ▀▀█
+  ▀  .▀▀▀▀ ▀▀▀▀ ▀▀▀ ▀▀▀
 
 ";
 
 INSTALL_DIR="/data/data/com.termux/files/usr/share/doc/PyTube"
-echo "[✔] Checking directories...";
+echo "${yellow}[✔] Checking directories...";
 if [ -d "$INSTALL_DIR" ];
 then
-    echo "[◉] A directory PyTube was found! Do you want to replace it? [Y/n]:" ;
+    echo "${blue}[◉] A directory PyTube was found! Do you want to replace it? [Y/n]:" ;
     read usr
     if [ $usr == "Y" ];
     then
@@ -27,26 +32,27 @@ then
     fi
 fi
 
-echo "[✔] Installing ...";
+echo "${yellow}[✔] Installing ...";
 echo "";
 apt install python2
-python2 -m pip install --upgrade youtube_dl
+python2 -m pip install --upgrade youtube_dl;
 git clone https://github.com/Manisso/PyTube.git $INSTALL_DIR;
-echo -e "#!/bin/bash \n python2 $INSTALL_DIR/pytube.py"  > pytube;
+echo -e "#!/bin/bash\n python2 $INSTALL_DIR/pytube.py"  > pytube;
 chmod +x pytube;
 mv pytube $PREFIX/bin/;
-
+cd
+rm -rf PyTube;
 
 if [ -d "$INSTALL_DIR" ];
 then
     echo "";
-    echo "[✔]Tool istalled with success![✔]";
+    echo "${green}[✔]Tool istalled with success![✔]";
     echo "";
-    echo "[✔]====================================================================[✔]";
-    echo "[✔] ✔✔✔  All is done!! You can execute tool by typing pytube   !   ✔✔✔ [✔]";
-    echo "[✔]====================================================================[✔]";
+    echo "${green}[✔]=====================================================[✔]";
+    echo "${green}[✔] All is done!! You can execute tool by typing pytube [✔]";
+    echo "${green}[✔]=====================================================[✔]";
     echo "";
 else
-    echo "[✘] Installation faled![✘] ";
+    echo "${red}[✘] Installation failed! [✘]";
     exit
 fi
