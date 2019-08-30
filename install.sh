@@ -13,16 +13,15 @@ echo "
 
 ";
 
- INSTALL_DIR="/usr/share/doc/PyTube"
-
+INSTALL_DIR="/data/data/com.termux/files/usr/share/doc/PyTube"
 echo "[✔] Checking directories...";
 if [ -d "$INSTALL_DIR" ];
 then
     echo "[◉] A directory PyTube was found! Do you want to replace it? [Y/n]:" ;
-    read mama
-    if [ $mama == "y" ] ;
+    read usr
+    if [ $usr == "Y" ];
     then
-      sudo rm -R "$INSTALL_DIR"
+      rm -rf "$INSTALL_DIR"
     else
         exit
     fi
@@ -30,17 +29,15 @@ fi
 
 echo "[✔] Installing ...";
 echo "";
-sudo apt-get install -y python-pip
-sudo pip install --upgrade youtube_dl
-sudo apt-get install -y libav-tools
+apt install python2
+python2 -m pip install --upgrade youtube_dl
 git clone https://github.com/Manisso/PyTube.git $INSTALL_DIR;
-echo "#!/bin/bash
-python $INSTALL_DIR/pytube.py" '${1+"$@"}' > pytube;
+echo -e "#!/bin/bash \n python2 $INSTALL_DIR/pytube.py"  > pytube;
 chmod +x pytube;
-sudo cp pytube /usr/bin/;
+cp pytube $PREFIX/bin/;
 
 
-if [ -d "$INSTALL_DIR/PyTube" ];
+if [ -d "$INSTALL_DIR" ];
 then
     echo "";
     echo "[✔]Tool istalled with success![✔]";
@@ -50,6 +47,6 @@ then
     echo "[✔]====================================================================[✔]";
     echo "";
 else
-    echo "[✘] Installation faid![✘] ";
+    echo "[✘] Installation faled![✘] ";
     exit
 fi
