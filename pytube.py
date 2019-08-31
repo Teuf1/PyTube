@@ -47,7 +47,7 @@ def quit():
 def select():
     try:
         choice = input("SnapTub~# ")
-        if choice == 1:
+        if choice == '1':
             os.system("clear")
             print ("""
  __     __  __        __
@@ -67,7 +67,7 @@ PUT URL EX: https://www.youtube.com/watch?v=PYJHFVBsmeQ
                 ydl.download([raw_input('URL: ')])
             print("")
             quit()
-        elif choice == 2:
+        elif choice == '2':
             os.system("clear")
             print ("""
   /$$$$$$                  /$$ /$$
@@ -92,7 +92,7 @@ PUT URL EX: https://www.youtube.com/watch?v=PYJHFVBsmeQ
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([raw_input('URL: ')])
             quit()
-        elif choice == 3:
+        elif choice == '3':
             os.system("clear")
             print("""
  /$$$$$$$  /$$                     /$$ /$$             /$$
@@ -114,8 +114,7 @@ EX: https://www.youtube.com/watch?v=lp-EO5I60KA&list=PLMC9KNkIncKtPzgY-5rmhvj7fa
             os.system("youtube-dl -cit --extract-audio --audio-format mp3 " + d3)
             print("")
             quit()
-    except(KeyboardInterrupt):
+    except KeyboardInterrupt:
         print ("")
-
 
 select()
