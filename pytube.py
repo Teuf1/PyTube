@@ -85,7 +85,7 @@ PUT URL EX: https://www.youtube.com/watch?v=PYJHFVBsmeQ
                 'format': 'bestaudio/best',
                 'postprocessors': [{
                     'key': 'FFmpegExtractAudio',
-                    'preferredcodec': 'mp3',
+                    'preferredcodec': 'm4a',
                     'preferredquality': '192',
                 }],
             }
@@ -111,7 +111,7 @@ EX: https://www.youtube.com/watch?v=lp-EO5I60KA&list=PLMC9KNkIncKtPzgY-5rmhvj7fa
 """)
             d3 = input('playlist URL: ')
             os.system("clear")
-            os.system("youtube-dl -cit --extract-audio --audio-format mp3 " + d3)
+            os.system("youtube-dl -cit --extract-audio --audio-format m4a " + d3)
             print("")
             quit()
     except KeyboardInterrupt:
